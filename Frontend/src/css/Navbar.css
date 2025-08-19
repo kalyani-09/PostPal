@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #222; /* Keeps the dark background */
+}
+
+/* Ensure .navbar fills 100% width and is at the top */
+.navbar {
+    width: 100vw; /* Better than 100% in this context */
+    display: flex;
+    height:30px;
+    justify-content: space-around; /* Spread items across */
+    align-items: center;
+    box-shadow: 1px 5px 5px #e0dcce;
+    background-color: white;
+    padding: 10px 20px;
+    position: fixed; /* Optional: stick to top */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Optional: prevent center alignment from body on navbar */
+.navbar-container {
+    width: 100%;
+}
+
+/* Add spacing between nav items */
+ul {
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+li {
+    list-style: none;
+    padding: 5px 10px;
+}
+
+/* Optional: Fix image size */
+img {
+    width: 200px;
+    height: 50px;
+    object-fit: contain;
+}

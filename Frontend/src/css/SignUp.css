@@ -1,0 +1,44 @@
+body{
+    background-image: url(../assets/img/insta-back.jpg);
+    background-size: cover;
+
+}
+
+
+.container1{
+    border: 2px solid black;
+    width:400px;
+    height: 430px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.form-container1{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+   gap:20px;
+    /* width:400px;
+    height:400px; */
+    /* border:1px solid white;
+    border-radius: 20px;; */
+}
+input{
+    width:300px;
+    height: 30px;
+    border-radius: 10px;
+}
+.signup-img1{
+    margin-top: 10px;
+    padding:10px;
+    border-radius:10px;
+   object-fit: cover;
+}
+button{
+    background-color: rgb(0, 102, 255);
+    color:white;
+    width:100px;
+    height:30px;
+    border-radius: 10px;
+    font-size: 15px;
+}

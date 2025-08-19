@@ -1,0 +1,158 @@
+.card {
+  max-width: 500px;
+  margin: 25px auto;
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 5px;
+  background: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+}
+
+.card-pic img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.card-header h5 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: black;
+}
+
+.card-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-content {
+  padding: 8px 10px;
+  text-align: left;
+}
+
+
+
+.card-content i {
+  font-size: 22px;
+  cursor: pointer;
+  margin-bottom:5px;
+  color: black;
+}
+
+.likes {
+  font-weight: bold;
+  margin: 2px 0;
+  font-size: 14px;
+  color: black;
+}
+
+.caption {
+  margin: 2px 0 0 0;
+  font-size: 14px;
+  color: black;
+}
+
+.add-comment {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgb(220, 220, 220);
+  padding: 5px 10px;
+}
+
+.add-comment i {
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: 8px;
+  color: black;
+}
+
+.add-comment input {
+  flex: 1;
+  outline: none;
+  border: none;
+  font-size: 14px;
+}
+
+.comment {
+  border: none;
+  background: none;
+  font-weight: bold;
+  cursor: pointer;
+  color: #0095f6;
+}
+
+.showComment{
+  width:100vw;
+  min-height:100vh;
+  position:fixed;
+  top:0;
+  left:0;
+  background-color: rgba(16,13,13,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  display:flex;
+  width:80%;
+  background-color:white;
+  /* position: absolute; */
+  top:10%;
+  left:2%;
+  height:500px;
+  border-radius: 8px;
+  position: relative;
+}
+.postPic{
+  background-color: black;
+  display: flex;
+  align-items: center;
+
+}
+.postPic img{
+  height:300px;
+  object-fit:contain;
+  width:100%;
+
+}
+
+.details{
+  width:100%;
+  height:inherit;
+  display: flex;
+  flex-direction:column;
+}
+.comment-section-wrapper {
+  max-height: 300px;   /* adjust based on design */
+  overflow-y: auto;    /* vertical scroll */
+  padding-right: 10px; /* so scrollbar doesn't overlap text */
+}
+
+
+.comment-section{
+  flex-grow:4;
+  text-align: left;
+  margin-left:10px;
+}
+.close-comment{
+  position: absolute;
+  top:10px;
+  right:10px;
+ 
+
+  cursor:pointer;
+}
+
+.close-comment i{
+  font-size: 30px;
+  color:red;
+}

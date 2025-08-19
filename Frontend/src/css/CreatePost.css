@@ -1,0 +1,48 @@
+.createPost{
+    max-width:500px;
+    margin:10px auto;
+    border:1px solid rgb(173,173,173);
+    border-radius:5px;
+   color: black;
+   background-color: aliceblue;
+}
+.post-header{
+    display: flex;
+}
+.share-btn{
+     border: none;
+  background: none;
+  font-weight: bold;
+  cursor: pointer;
+  color: #0095f6;
+}
+.main-div{
+   border:1px solid rgb(173,173,173);
+}
+
+.details{
+    display: flex;;
+    border-top: 1px solid rgb(173,173,173);
+}
+.card-header>img{
+    width:60px;
+     border-radius:50%;
+     
+}
+
+textarea{
+    width:90%;
+    border:1px solid rgba(0, 0, 0, 0.045);
+    /* outline:none; */
+    background-color: aliceblue;
+    border-radius: 10px;
+    color:black;
+}
+
+#output{
+    width:400px;
+    height: 300px;
+    border:none;
+    outline:none;
+    margin-top: 5px;
+}
