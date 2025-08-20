@@ -17,7 +17,7 @@ const userSchema=new mongoose.Schema(
         },
         Photos:{
             type:"String",
-            required:"true"
+            default:"D:\\Instagram-clone2\\Instagram-clone\\Insta-clone\\Backend\\Frontend\\src\\assets\\img\\default-profile.jpg"
         },
         followers:[{type:ObjectId,ref:"User"}],
         following:[{type:ObjectId, ref:"User"}],
