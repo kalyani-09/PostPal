@@ -23,7 +23,7 @@ export default function PostDetails({item, showPost, dontShowPost}){
         .then((result)=>{
             console.log(result);
             notifyA("Post Deleted Successfully");
-            navigate("/home");
+            navigate("/");
         })
        }
 

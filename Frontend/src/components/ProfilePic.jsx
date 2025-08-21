@@ -41,10 +41,10 @@ function ProfilePic({changeProfile}){
             window.location.reload();
             if(data.error){
                 notifyA("Something went Wrong");
-                // navigate("/home");
+                // navigate("/");
             }else{
                 notifyB("Successfully posted");
-                // navigate("/home");
+                // navigate("/");
             }
         })
          .catch((err)=>console.log(err));

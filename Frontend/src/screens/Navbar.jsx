@@ -12,7 +12,7 @@ const {setModalOpen}=useContext(LoginContext);
         if (userLogin || token) {
             return [
                 <>
-                    <li><Link to="/home">Home</Link></li>
+                    <li><Link to="/">Home</Link></li>
                     <li><Link to="/profile">Profile</Link></li>
                     <li><Link to="/createPost">CreatePost</Link></li>
                     <li><Link to="/myfollowingpost">MyFollowingPost</Link></li>
@@ -23,7 +23,7 @@ const {setModalOpen}=useContext(LoginContext);
         else {
             return [
                 <>
-                    <li><Link to="/home">Home</Link></li>
+                    <li><Link to="/">Home</Link></li>
                     <li><Link to="/signup">SignUp</Link></li>
                     <li><Link to="/signin">SignIn</Link></li>
                 </>
@@ -32,7 +32,7 @@ const {setModalOpen}=useContext(LoginContext);
     }
     return (
         <div className="navbar">
-            <Link to="/home"><img src={logo} alt="No image" /></Link>
+            <Link to="/"><img src={logo} alt="No image" /></Link>
             <ul className="nav-menu">
                 {loginData()}
 
