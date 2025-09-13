@@ -38,6 +38,7 @@ router.post("/createPost", requireLogin, (req, res) => {
 
 router.get("/mypost", requireLogin, (req, res) => {
     POST.find({ postedBy: req.user._id })
+         .populate("postedBy","_id name photos").populate("comments.postedBy","_id name ")
         .then(mypost => {
             res.json(mypost);
             // console.log(mypost);
@@ -77,7 +78,7 @@ router.put("/unlikes", requireLogin, (req, res) => {
 
 router.put("/comment", requireLogin, (req, res) => {
     const comment = {
-        comment: req.body.text,   // take comment text from request
+        comment: req.body.comment,   // take comment text from request
         postedBy: req.user._id       // always use logged-in user (secure)
     };
 

@@ -15,7 +15,7 @@ router.get("/user/:userid", requireLogin, async (req, res) => {
         if (!user) {
             return res.status(422).json({ error: "User not Found" });
         }
-        const post = await POST.find({ postedBy: req.params.userid })
+        const post = await POST.find({ postedBy: req.params.userid }).populate("postedBy","_id name Photos").populate("comments.postedBy","_id name ");
         if (!post) {
             return res.status(422).json({ error: "Post Not Found" })
         } else {

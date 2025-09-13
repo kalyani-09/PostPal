@@ -2,8 +2,10 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const user = require("../models/model.js");
+const post=require("../models/post.js");
 const mongoose = require("mongoose");
 const USER = mongoose.model("User");
+const POST =mongoose.model("POST");
 const { JWT_Secret } = require("../key.js");
 const JWT = require("jsonwebtoken");
 const requireLogin = require("../middlewares/requireLogin.js");
@@ -52,25 +54,25 @@ router.post("/signin", async (req, res) => {
         return res.status(422).json({ error: "Enter all fields" });
     }
     const foundUser = await USER.findOne({ email: email });
-    if (!foundUser) {
+    
+     if (!foundUser) {
         return res.status(422).json({ error: "Invalid Email" });
     } else {
-        bcrypt.compare(password, foundUser.password).
-            then((match) => {
-                // console.log("SignIn Successfully");
-                // return
-
-                const token = JWT.sign({ _id: foundUser._id }, JWT_Secret);
-                const { _id, name, email } = foundUser;
-
-                console.log(token, { user: { _id, name, email} });
+        const match = bcrypt.compare(password, foundUser.password);
+        if(!match){
+            return res.status(422).json({ error: "Invalid Passwordd"});
+        }
+            const token = JWT.sign({ _id: foundUser._id }, JWT_Secret);
+                const { _id, name, email , followers , following , Photos } = foundUser;
+               const posts = await POST.find({ postedBy: _id });
+              
+                console.log(token, { user: { _id, name, email , followers , following , Photos} }, posts.length);
 
                 return res.json({
                     token: token,
-                    user: { _id, name, email }
+                    user: { _id, name, email ,followers , following , Photos},
+                    post : posts.length
                 });
-
-            });
     }
 });
 

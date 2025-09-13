@@ -15,7 +15,7 @@
 
 const express=require("express");
 const app=express();
-const port=process.env.port || 5000;
+const port=process.env.PORT || 5000;
 const data=require("./data.js")
 const cors=require("cors");
 const mongoose=require("mongoose");
@@ -54,7 +54,15 @@ app.use(require("./routes/suggestCaption.js"));
 
 //Serving Frontend
 app.use(express.static(path.join(__dirname,"./Frontend/dist")));
-app.get("/{*splat}",(req,res)=>{
+// app.get("/{*splat}",(req,res)=>{
+//     res.sendFile(
+//         path.join(__dirname,"./Frontend/dist/index.html")
+//     ),
+//     function(err){
+//          res.status(500).send(err);
+//     }
+// })
+app.get("*",(req,res)=>{
     res.sendFile(
         path.join(__dirname,"./Frontend/dist/index.html")
     ),
