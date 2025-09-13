@@ -1,0 +1,125 @@
+.left-sidebar {
+  width: 280px;
+  background: white;
+  padding: 20px 20px 20px 0; /* remove left padding */
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  height: 100vh; /* full height */
+  overflow-y: auto;
+  position: fixed; /* stick to the left */
+  top: 0;
+  left: 0;
+  /* margin-left:100px; */
+
+}
+
+
+.profile-section {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e1e5e9;
+}
+
+.profile-pic {
+  margin-bottom: 15px;
+}
+
+.profile-pic img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #007bff;
+}
+
+.profile-name {
+  margin: 0 0 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.profile-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: 20px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #6c757d;
+  margin-top: 2px;
+}
+
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin-top:40px;
+  
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #6c757d;
+  transition: all 0.2s;
+}
+
+.nav-item:hover {
+  background: #f8f9fa;
+  color: #007bff;
+}
+
+
+.nav-item.active {
+  background: #e3f2fd;
+  color: #007bff;
+  font-weight: 600;
+}
+
+.nav-item i {
+  margin-right: 12px;
+  width: 20px;
+  text-align: center;
+}
+.nav-lg{
+/* Make logout button look like NavLink */
+
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  font-size: inherit;
+  color: #6c757d;
+}
+
+/* On hover, same effect as nav-item hover */
+.nav-lg:hover {
+   background: #f8f9fa;
+  color: #007bff;
+}
+.nav-lg i{
+   margin-right: 12px;
+  width: 20px;
+  text-align: center;
+}

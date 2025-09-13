@@ -79,8 +79,8 @@ function ProfilePic({changeProfile}){
 
    };
     return (
-        <div className="profile-Pic darkBg">
-            <div className="changePic centered">
+        <div className="profile-Pic darkBg" onClick={changeProfile}>
+            <div className="changePic centered" onClick={(e)=>e.stopPropagation()}>
                 <div>
                     <h2>Change Profile Photo</h2>
                 </div>

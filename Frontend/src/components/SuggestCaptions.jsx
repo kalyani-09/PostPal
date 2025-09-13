@@ -36,18 +36,28 @@ function SuggestCaptions() {
   };
 
   return (
-    <div style={{ padding: "20px" , marginTop:"20px" , borderTop:"2px  solid black"}}>
-      <input
+    <div style={{ padding: "20px", marginTop: "20px" }}>
+     <div style={{display:"flex",alignContent:"center",gap:"10px",marginBottom:"20px"}}>
+       <input
         type="file"
         accept="image/*"
         onChange={(e) => setFile(e.target.files[0])}
       />
-      <button onClick={handleUpload} disabled={!file || loading} style={{width:"150px"}}>
+      <button onClick={handleUpload} disabled={!file || loading} style={{ background: "linear-gradient(135deg, #667eea, #764ba2)",
+    /* background: #e9ecef; */
+    color:" #e9ecef",
+    border: "none",
+    padding: "5px 5px",
+    borderRadius: "30px",
+    fontSize: "16px",
+    cursor: "pointer" }}>
         {loading ? "Generating..." : "Generate Captions"}
       </button>
+     </div>
 
       {captions.length > 0 && (
-        <div>
+        <div style={{
+          border: "1px solid rgba(0,0,0,.1)", borderRadius: "10px"}}>
           <h3>Suggested Captions:</h3>
           {captions.map((cap, i) => (
             <p key={i}>👉 {cap}</p>

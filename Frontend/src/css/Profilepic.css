@@ -1,34 +1,59 @@
-.darkBg{
-    background-color: rgba(0, 0, 0, 0.2);
-    width: 100vw;
-    height: 100vh;
-    z-index: 0;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    position: absolute;
-}
-.centered{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+
+
+/* Overlay covers the whole screen and blocks background clicks */
+.darkBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.changePic{
+
+/* Center modal box */
+.centered {
+    position: relative; /* no need fixed, parent already fixed */
+    transform: none;    /* center handled by flex in .darkBg */
+}
+
+/* Modal box */
+.changePic {
     background-color: #fff;
-    border-radius:20px;
-    color:black;
-}
-.changePic div{
-    padding:10px 20px;
+    border-radius: 20px;
+    color: black;
+    width: 320px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    z-index: 9999;  /* must be above overlay */
+    text-align: center;
+    animation: scaleUp 0.2s ease-in-out;
 }
 
-.upload-btn1{
-    cursor:pointer;
-    width:100%;
-    background-color: none;
+/* Content padding */
+.changePic div {
+    padding: 12px 20px;
+}
+
+/* Buttons */
+.upload-btn1 {
+    cursor: pointer;
+    width: 100%;
     border: none;
-    font-weight: bolder;
+    font-weight: bold;
     font-size: 15px;
+    padding: 8px 0;
+    background: none;
+}
+
+.upload-btn1:hover {
+    background: #f5f5f5;
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
