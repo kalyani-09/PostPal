@@ -54,15 +54,7 @@ app.use(require("./routes/suggestCaption.js"));
 
 //Serving Frontend
 app.use(express.static(path.join(__dirname,"./Frontend/dist")));
-// app.get("/{*splat}",(req,res)=>{
-//     res.sendFile(
-//         path.join(__dirname,"./Frontend/dist/index.html")
-//     ),
-//     function(err){
-//          res.status(500).send(err);
-//     }
-// })
-app.get("*",(req,res)=>{
+app.get("/{*splat}",(req,res)=>{
     res.sendFile(
         path.join(__dirname,"./Frontend/dist/index.html")
     ),
@@ -70,6 +62,14 @@ app.get("*",(req,res)=>{
          res.status(500).send(err);
     }
 })
+// app.get("*",(req,res)=>{
+//     res.sendFile(
+//         path.join(__dirname,"./Frontend/dist/index.html")
+//     ),
+//     function(err){
+//          res.status(500).send(err);
+//     }
+// })
 
 
 app.listen(port,()=>{
