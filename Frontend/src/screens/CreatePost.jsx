@@ -10,6 +10,8 @@ function CreatePost() {
   const [image, setImage] = useState(null);   // store the file
   const [previewUrl, setPreviewUrl] = useState(null); // store preview URL
   const [url, setUrl] = useState("");
+const API = import.meta.env.VITE_API_BASE_URL;
+
 
   const defaultProfile =
     "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALgAAACUCAMAAAAXgxO4...";
@@ -19,7 +21,7 @@ function CreatePost() {
 
   useEffect(() => {
     if (url) {
-      fetch("/createPost", {
+      fetch(`${API}/createPost`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

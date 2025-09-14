@@ -7,7 +7,7 @@ import { useContext } from "react";
 function Navbar() {
     const { userLogin } = useContext(LoginContext);
     const { setModalOpen } = useContext(LoginContext);
-
+const API = import.meta.env.VITE_API_BASE_URL;
     const loginData = () => {
         const token = localStorage.getItem("jwt");
         if (userLogin || token) {

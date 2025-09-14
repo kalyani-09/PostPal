@@ -12,7 +12,7 @@ function SignIn() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+ const API = import.meta.env.VITE_API_BASE_URL;
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
   const postData = () => {
@@ -26,7 +26,7 @@ function SignIn() {
       return;
     }
 
-    fetch("/signin", {
+    fetch(`${API}/signin`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

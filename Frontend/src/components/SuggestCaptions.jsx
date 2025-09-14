@@ -16,7 +16,7 @@ function SuggestCaptions() {
       const formData = new FormData();
       formData.append("image", file);
 
-      const res = await fetch("/suggest-captions", {
+      const res = await fetch(`${API}/suggest-captions`, {
         method: "POST",
         body: formData,
       });

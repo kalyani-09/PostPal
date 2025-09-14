@@ -14,7 +14,7 @@ export default function PostDetails({item, showPost, dontShowPost}){
 
     const deletePost=(postId)=>{
        if(window.confirm("Do you really want to delete this Post")){
-         fetch(`/delete/${postId}`,{
+         fetch(`${API}/delete/${postId}`,{
             "method":"DELETE",
             "headers":{
                 "Authorization":"Bearer "+localStorage.getItem("jwt")
