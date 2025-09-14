@@ -208,7 +208,7 @@ const API = import.meta.env.VITE_API_BASE_URL;
                   <img src={item?.postedBy?.Photos ? item.postedBy.Photos : defaultProfile} alt="Profile" />
                 </div>
                 <h5>{item.postedBy?.name || "Unknown User"}</h5>
-                <span className="like-badge">{item.likes?.length || 0} Likes</span>
+                {/* <span className="like-badge">{item.likes?.length || 0} Likes</span> */}
               </div>
               <div className="comment-section-wrapper">
                 {Array.isArray(item.comments) &&
@@ -223,7 +223,7 @@ const API = import.meta.env.VITE_API_BASE_URL;
                           className="commenter"
                           style={{ fontWeight: "bolder" }}
                         >
-                          {com.postedBy?.name || "Unknown User"}{" "}
+                           { com?.postedBy?.name ? com.postedBy.name : "Unknown User"}{" "}
                         </span>
                         <span className="commentText">{com.comment}</span>
                       </p>
@@ -231,8 +231,8 @@ const API = import.meta.env.VITE_API_BASE_URL;
                   ))}
               </div>
 
-              <div className="card-content">
-                <p>{item.likes?.length || 0} Likes</p>
+              <div className="card-content" style={{position:"absolute",bottom:"0" , borderTop:"1px solid #00000029",width:"455px"}}>
+                <p>{item.likes?.length || 0} <i className="fa-solid fa-heart" style={{color: "#e70808"}}></i></p>
                 <p>{item.body}</p>
 
                 <div className="add-comment">
