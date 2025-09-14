@@ -37,7 +37,7 @@ mongoose.connect(mongoUrl, {
 
 app.use(cors(
    {
-  origin: ["http://localhost:5173"], // add your frontend URLs
+  origin: ["https://postpal-11-frontend.onrender.com"], // add your frontend URLs
   credentials: true
    }
 ));
