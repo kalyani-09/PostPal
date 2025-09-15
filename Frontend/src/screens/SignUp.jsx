@@ -9,6 +9,7 @@ function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+   const API = import.meta.env.VITE_API_BASE_URL;
 
   const notifyA = (msg) => toast.error(msg);
   const notifyB = (msg) => toast.success(msg);
