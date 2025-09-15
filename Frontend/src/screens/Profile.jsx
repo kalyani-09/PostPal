@@ -57,7 +57,7 @@ function Profile() {
         <main className="pp-main">
           {/* Posts grid */}
           <section className="pp-posts-grid">
-            {posts.map((post) => (
+            {posts.length ? posts.map((post) => (
              <div className="pp-post-card" key={post._id}>
                   <div className="post-image-container" onClick={() => showPost(post)}>
                     <img src={post.photo} alt="Post" className="post-image" />
@@ -101,7 +101,7 @@ function Profile() {
                     </div>
                   </div>
                 </div>
-            ))}
+            )) : "No Post Found"}
           </section>
         </main>
       </div>

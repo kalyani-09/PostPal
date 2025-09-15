@@ -112,7 +112,7 @@ const API = import.meta.env.VITE_API_BASE_URL;
         "Authorization": "Bearer " + localStorage.getItem("jwt"),
       },
       body: JSON.stringify({
-        text: text,
+        comment: text,
         postId: id,
       }),
     })

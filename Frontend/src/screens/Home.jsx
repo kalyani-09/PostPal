@@ -140,7 +140,7 @@ const API = import.meta.env.VITE_API_BASE_URL;
         "Authorization": "Bearer " + localStorage.getItem("jwt"),
       },
       body: JSON.stringify({
-        text: text,
+        comment: text,
         postId: id,
       }),
     })
@@ -260,8 +260,10 @@ const API = import.meta.env.VITE_API_BASE_URL;
                           style={{ fontWeight: "bolder" }}
                         >
                           { com?.postedBy?.name ? com.postedBy.name : "Unknown User"}{" "}
+                          {console.log(com.postedBy.name)}
                         </span>
                         <span className="commentText">{com.comment}</span>
+                        {console.log(com.comment)}
                       </p>
                     </div>
                   ))}

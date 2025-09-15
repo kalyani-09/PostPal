@@ -7,7 +7,7 @@ const requireLogin = require("../middlewares/requireLogin");
 
 router.get("/allpost", requireLogin, (req, res) => {
     POST.find()
-        .populate("postedBy", "_id name Photos")
+        .populate("postedBy", "_id name Photos").populate("comments.postedBy","_id name ")
         .sort("-createdAt")
         .then(posts => {
             res.json(posts);
